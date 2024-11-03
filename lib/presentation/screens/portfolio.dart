@@ -120,10 +120,13 @@ class ProjectPage extends HookWidget {
             child: ListView(
           children: dataList.value
               .map(
-                (e) => ProjectTile(
-                  name: e,
-                  //NOTE: Due to randomness of the free image api images are changed for each screen render.
-                  image: "https://picsum.photos/${Random().nextInt(200) + 120}",
+                (e) => Center(
+                  child: ProjectTile(
+                    name: e,
+                    //NOTE: Due to randomness of the free image api images are changed for each screen render.
+                    image:
+                        "https://picsum.photos/${Random().nextInt(200) + 120}",
+                  ),
                 ),
               )
               .toList(),
