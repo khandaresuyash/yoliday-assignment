@@ -117,19 +117,16 @@ class ProjectPage extends HookWidget {
       children: [
         s.SearchBar(dataList: dataList, search: search),
         Expanded(
-            child: SingleChildScrollView(
-          child: Column(
-            children: dataList.value
-                .map(
-                  (e) => ProjectTile(
-                    name: e,
-                    //NOTE: Due to randomness of the free image api images are changed for each screen render.
-                    image:
-                        "https://picsum.photos/${Random().nextInt(200) + 120}",
-                  ),
-                )
-                .toList(),
-          ),
+            child: ListView(
+          children: dataList.value
+              .map(
+                (e) => ProjectTile(
+                  name: e,
+                  //NOTE: Due to randomness of the free image api images are changed for each screen render.
+                  image: "https://picsum.photos/${Random().nextInt(200) + 120}",
+                ),
+              )
+              .toList(),
         ))
       ],
     );
