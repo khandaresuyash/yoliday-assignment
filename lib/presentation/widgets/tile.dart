@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:yoliday/presentation/colors.dart';
@@ -28,8 +29,8 @@ class ProjectTile extends StatelessWidget {
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10.r),
                 bottomLeft: Radius.circular(10.r)),
-            child: Image.network(
-              image,
+            child: Image(
+              image: CachedNetworkImageProvider(image),
               height: 110.h,
               width: 110.w,
               fit: BoxFit.cover,

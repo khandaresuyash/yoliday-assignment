@@ -13,6 +13,15 @@ class SearchBar extends StatelessWidget {
   final ValueNotifier<List<String>> dataList;
   final TextEditingController search;
 
+  List<String> getSearchedProjects(String query) {
+    if (query.trim().isEmpty) {
+      return projectNames;
+    }
+    return projectNames.where((e) {
+      return e.trim().toLowerCase().contains(query.toLowerCase());
+    }).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,13 +43,7 @@ class SearchBar extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 2.5.h),
             child: TextField(
               onChanged: (value) {
-                if (value.isEmpty) {
-                  dataList.value = projectNames;
-                  return;
-                }
-                dataList.value = projectNames.where((e) {
-                  return e.startsWith(search.text);
-                }).toList();
+                dataList.value = getSearchedProjects(value);
               },
               controller: search,
               decoration: const InputDecoration(
@@ -49,13 +52,7 @@ class SearchBar extends StatelessWidget {
           )),
           GestureDetector(
             onTap: () {
-              if (search.text.isEmpty) {
-                dataList.value = projectNames;
-                return;
-              }
-              dataList.value = projectNames.where((e) {
-                return e.startsWith(search.text);
-              }).toList();
+              dataList.value = getSearchedProjects(search.text);
             },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 10.w),
