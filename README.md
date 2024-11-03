@@ -1,16 +1,5 @@
-# yoliday
+# Assignment
+<img width="1440" alt="Screenshot 2024-11-03 at 6 40 28 PM" src="https://github.com/user-attachments/assets/3d5d7b72-854a-4d5b-84e8-7c884b1b7e0a">
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# NOTE
+Every time a widget is re-rendered, you can see various images because the FREE images api is random. However, it won't be a problem when we employ particular storage solutions or resource links in production.
