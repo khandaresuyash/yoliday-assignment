@@ -11,13 +11,13 @@ class HomeScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final selectedPageIndex = useState(0);
+    final selectedPageIndex = useState(1);
     return Scaffold(
       body: IndexedStack(
         index: selectedPageIndex.value,
         children: const [
-          PortfolioScreen(),
           Scaffold(),
+          PortfolioScreen(),
           Scaffold(),
           Scaffold(),
         ],
